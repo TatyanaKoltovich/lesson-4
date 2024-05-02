@@ -16,18 +16,20 @@ public class Main {
 
         List<String> stringList = Arrays.asList(words);
         //stringList.sort();
-        stringList.sort(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                if (o1.length() > o2.length()) {
-                    return 1;
-                } else if (o1.length() < o2.length()) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            }
-        });
+//        stringList.sort(new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                if (o1.length() > o2.length()) {
+//                    return 1;
+//                } else if (o1.length() < o2.length()) {
+//                    return -1;
+//                } else {
+//                    return 0;
+//                }
+//            }
+//        });
+      Collections.sort(stringList, new MyComparator());
+
       for (String s : stringList) {
             System.out.println(s + " длина строки: " + s.length());
         }
