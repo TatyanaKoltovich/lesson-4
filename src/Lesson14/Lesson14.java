@@ -72,7 +72,7 @@ public class Lesson14 {
         FileWriter fw = new FileWriter("src/Lesson14/fileDocumOut.txt");
 
         String line;
-        Pattern pattern = Pattern.compile("^(docum[A-Za-z0-9]{10})|(contract[A-Za-z0-9]{7})$");
+        Pattern pattern = Pattern.compile("^(docum[A-Za-z\\d]{10})|(contract[A-Za-z\\d]{7})$");
 
         while ((line = br.readLine()) != null) {
             String[] words = line.split(" ");
