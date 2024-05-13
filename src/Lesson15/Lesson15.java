@@ -5,10 +5,10 @@ import java.util.*;
 
 public class Lesson15 {
     public static void main(String[] args) {
-        //task1();
-        //task2();
+        task1();
+        task2();
         task3();
-//        task4();
+        task4();
     }
 
     public static void task1() {
@@ -26,7 +26,7 @@ public class Lesson15 {
         System.out.println(linkedHashSet);
     }
 
-    public static void task2(){
+    public static void task2() {
 //        Создать класс, который будет хранить в себе коллекцию с названиями животных.
 //        Реализовать методы удаления и добавления животных по следующим правилам:
 //        добавляется всегда в начало коллекции, а удаляется всегда из конца. Показать работу
@@ -49,7 +49,7 @@ public class Lesson15 {
         System.out.println(animalList.getAnimalList());
     }
 
-    public static void task3(){
+    public static void task3() {
 //        Создать класс Student, содержащий следующие характеристики – имя, группа, курс,
 //        оценки по предметам. Создать коллекцию, содержащую объекты класса Student.
 //        Написать метод, который удаляет студентов со средним баллом <3. Если средний
@@ -122,5 +122,53 @@ public class Lesson15 {
 //        основе коллекции будет массив. Кастомная коллекция должна хранить элементы разных
 //        классов(т.е. это generic)
 
+        //создаем свой ArrayList
+        MyArrayList<Student> MyStudents = new MyArrayList<>(Student.class);
+       // MyArrayList<Student> MyStudents = new MyArrayList<>(Class <Student>);
+
+        //добавляем туда студентов
+        Student student1 = new Student("Петров Иван", "11a", 1);
+        Student student2 = new Student("Иванов Станислав", "11a", 1);
+        System.out.println("Добавляем студента:");
+        MyStudents.add(Student.class, student1);
+        System.out.println("Добавляем студента:");
+        MyStudents.add(Student.class, student2);
+
+        //выводим список студентов
+        System.out.println("Список студентов:");
+        MyStudents.printArraylist();
+
+        //добавляем нового студента в конец списка
+        System.out.println("Добавляем студента в конец списка:");
+        Student student3 = new Student("Котов Роман", "11b", 1);
+        MyStudents.add(Student.class, student3);
+        MyStudents.printArraylist();
+
+        //добавляем студента в список по заданному индексу
+        System.out.println("Добавляем студента в список по индексу. Введите число от 0 до " + MyStudents.getLength());
+        Scanner scanner = new Scanner(System.in);
+        int index = scanner.nextInt();
+        Student student4 = new Student("Кошкин Илья", "11b", 1);
+        MyStudents.add(Student.class, index, student4);
+        MyStudents.printArraylist();
+
+        //удалеяем элемент по индексу
+        System.out.println("Удаляем элемент с индексом 1:");
+        MyStudents.remove(1);
+        MyStudents.printArraylist();
+
+        //получаем элемент по индексу
+        System.out.println("Получаем элемент по индексу 0");
+        Student getStudent = MyStudents.get(0);
+        System.out.println(getStudent.toString());
+
+        //проверяем наличие элемента в списке
+        System.out.println("Проверяем наличие в списке студента " + getStudent);
+        System.out.println("Студент в списке: " + MyStudents.contains(getStudent));
+
+        //удаляем все элементы списка
+        System.out.println("Удаляем все элементы массива");
+        MyStudents.clear();
+        MyStudents.printArraylist();
     }
 }
