@@ -92,7 +92,7 @@ public class Lesson15 {
         for (int i = 0; i < studentArrayList.size(); i++) {
             float averageGrade = studentArrayList.get(i).calculateAverageGrade(studentArrayList.get(i));
             if (averageGrade >= (float) 3) {
-                studentArrayList.get(i).tranferToNextCourse(studentArrayList.get(i));
+                studentArrayList.get(i).transferToNextCourse(studentArrayList.get(i));
             } else {
                 studentArrayList.remove(studentArrayList.get(i));
             }

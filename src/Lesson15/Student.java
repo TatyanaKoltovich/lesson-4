@@ -80,7 +80,7 @@ public class Student {
         this.course = 0;
     }
 
-    public void tranferToNextCourse(Student student){
+    public void transferToNextCourse(Student student){
         this.course ++;
     }
 
